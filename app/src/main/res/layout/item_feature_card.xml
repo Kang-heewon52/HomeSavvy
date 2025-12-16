@@ -21,7 +21,7 @@
             android:layout_height="48dp"
             android:src="@drawable/ic_wrench_fix"
             android:contentDescription="기능 아이콘"
-            android:tint="@color/color_primary_deep_slate"
+            app:tint="@color/color_primary_deep_slate"
             app:layout_constraintTop_toTopOf="parent"
             app:layout_constraintStart_toStartOf="parent"/>
 

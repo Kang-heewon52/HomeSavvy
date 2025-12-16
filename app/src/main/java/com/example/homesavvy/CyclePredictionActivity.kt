@@ -16,7 +16,11 @@ import android.app.AlarmManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
+import android.provider.Settings
 import android.view.LayoutInflater
+import java.util.Date
+import java.util.Locale
 import android.view.ViewGroup
 import android.util.Log
 import android.graphics.Typeface
@@ -295,6 +299,13 @@ class CyclePredictionActivity : AppCompatActivity() {
     private fun scheduleNotification(timeInMillis: Long, itemType: String, uniqueId: String) {
         val alarmManager = getSystemService(Context.ALARM_SERVICE) as AlarmManager
 
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.S) {
+            if (!alarmManager.canScheduleExactAlarms()) {
+                Log.e("AlarmScheduler", "정확한 알람 권한이 없습니다. 사용자에게 권한 요청이 필요합니다.")
+                return
+            }
+        }
+
         val requestCode = uniqueId.hashCode()
 
         val intent = Intent(this, NotificationReceiver::class.java).apply {
@@ -310,7 +321,7 @@ class CyclePredictionActivity : AppCompatActivity() {
             PendingIntent.FLAG_UPDATE_CURRENT or PendingIntent.FLAG_IMMUTABLE
         )
 
-        if (android.os.Build.VERSION.SDK_INT >= android.os.Build.VERSION_CODES.M) {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
             alarmManager.setExactAndAllowWhileIdle(
                 AlarmManager.RTC_WAKEUP,
                 timeInMillis,
