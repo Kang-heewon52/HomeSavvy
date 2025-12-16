@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="black">#FF000000</color>
+    <color name="white">#FFFFFFFF</color>
+    <color name="navy_professional">#1A237E</color>
+    <color name="blue_light">#E3F2FD</color>
+    <color name="dark_gray">#37474F</color>
+    <color name="color_primary_deep_slate">#264653</color>
+    <color name="color_accent_dusty_teal">#2A9D8F</color>
+    <color name="color_background_subtle">#F4F7F8</color>
+    <color name="text_dark">#37474F</color>
+    <color name="color_accent_general">#E9C46A</color>
+    <color name="color_accent_warning">#EE4266</color>
+    <color name="color_base_summary_text">#0078D4</color>
+    <color name="red_delete">#E53935</color>
+</resources>

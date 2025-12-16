@@ -1,0 +1,11 @@
+<resources>
+    <string name="app_name">HomeSavvy</string>
+
+    <string-array name="consumable_items">
+        <item>정수기 필터</item>
+        <item>에어컨 필터</item>
+        <item>건전지</item>
+        <item>기타 소모품</item>
+        <item>테스트</item>
+    </string-array>
+</resources>

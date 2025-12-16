@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp"
+    android:background="@color/color_background_subtle"
+    tools:context=".ManualSearchActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_manual_search"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        app:title="Manual Smart Search"
+        app:titleTextColor="@color/color_primary_deep_slate"
+        app:navigationIcon="@drawable/ic_arrow_back_24dp"
+        android:background="@color/white"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        android:layout_marginBottom="8dp" />
+
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="1단계: 매뉴얼 등록 (사진 또는 PDF)"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <Button
+        android:id="@+id/btn_upload_manual"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="매뉴얼 사진/파일 선택"
+        android:layout_marginBottom="16dp"
+        android:drawableStart="@android:drawable/ic_menu_upload"
+        android:padding="12dp"/>
+
+    <TextView
+        android:id="@+id/tv_ocr_status"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="상태: 매뉴얼을 등록해주세요."
+        android:textColor="@android:color/holo_blue_dark"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="2단계: 질문 입력"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <EditText
+        android:id="@+id/et_user_query"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="예: 세탁기 에러코드 E3은 뭘 뜻해?"
+        android:inputType="textMultiLine"
+        android:minLines="2"
+        android:maxLines="4"
+        android:padding="10dp"
+        android:background="@drawable/rounded_input_background"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/btn_smart_search"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="스마트 검색 시작 (Gemini 실행)"
+        android:backgroundTint="@color/color_primary_deep_slate"
+        android:textColor="@android:color/white"
+        android:layout_marginBottom="24dp"/>
+
+    <ProgressBar
+        android:id="@+id/progress_loader"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center_horizontal"
+        android:visibility="gone"
+        android:indeterminate="true"
+        android:layout_marginBottom="24dp"/>
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="3단계: 핵심 요약 답변"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="8dp"/>
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/rounded_input_background"
+        android:padding="8dp">
+
+        <TextView
+            android:id="@+id/tv_search_result"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="요약된 답변이 여기에 표시됩니다. (원인 및 조치 방법)"
+            android:textSize="16sp"
+            android:textColor="@android:color/black"
+            android:padding="4dp"/>
+    </ScrollView>
+
+</LinearLayout>

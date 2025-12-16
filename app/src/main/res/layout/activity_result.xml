@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/color_background_subtle"
+    tools:context=".ResultActivity">
+
+    <com.google.android.material.appbar.MaterialToolbar
+        android:id="@+id/toolbar_result"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:color/white"
+        app:title="AI 진단 결과"
+        app:titleTextColor="@color/color_primary_deep_slate"
+        app:navigationIcon="@drawable/ic_arrow_back_24dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ScrollView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintTop_toBottomOf="@id/toolbar_result"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="16dp">
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="진단 대상 이미지"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/color_primary_deep_slate"
+                android:layout_marginBottom="8dp" />
+
+            <ImageView
+                android:id="@+id/iv_diagnosis_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:scaleType="centerCrop"
+                android:background="#CCCCCC"
+                android:contentDescription="진단 대상 이미지"
+                android:layout_marginBottom="24dp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="AI 진단 결과 및 가이드"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                android:textColor="@color/color_primary_deep_slate"
+                android:layout_marginBottom="8dp" />
+
+            <TextView
+                android:id="@+id/tv_diagnosis_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:background="@drawable/rounded_background"
+                android:text="AI가 분석한 결과가 여기에 표시됩니다."
+                android:textSize="16sp"
+                android:textColor="@color/text_dark" />
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btn_recommend_parts"
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_marginStart="24dp"
+                android:layout_marginEnd="24dp"
+                android:layout_marginTop="32dp"
+                android:text="부품/공구 스마트 추천"
+                android:textSize="18sp"
+                android:textColor="@android:color/white"
+                android:visibility="gone"
+
+                style="@style/Widget.MaterialComponents.Button"
+                app:cornerRadius="8dp"
+                app:backgroundTint="@color/color_primary_deep_slate"
+                app:layout_constraintTop_toBottomOf="@id/tv_diagnosis_result"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_recommendation_result"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:padding="16dp"
+                android:layout_marginTop="8dp"
+                android:background="@drawable/rounded_background"
+                android:text="부품 추천 결과"
+                android:visibility="gone"
+                app:layout_constraintTop_toBottomOf="@id/btn_recommend_parts" />
+        </LinearLayout>
+    </ScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
