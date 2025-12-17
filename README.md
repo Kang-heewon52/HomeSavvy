@@ -63,3 +63,7 @@
       ```
 4. **실행:**
     - Android 에뮬레이터 또는 실제 기기를 연결하고, 실행 버튼(▶️)을 눌러 앱을 빌드하고 실행합니다.
+
+5.## 🎥 시연 영상 (Demo Video)
+[👉 데모 영상 보러가기 (YouTube)](https://youtube.com/shorts/wVJG6G7SEZA?feature=share)
+
